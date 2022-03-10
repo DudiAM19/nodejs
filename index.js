@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = experess();
 const productRouter = require('./src/routes/product');
+const authRouter = require('./src/routes/auth');
 
 app.use(bodyParser.json())
 
@@ -13,6 +14,7 @@ app.use((req, res, next) => {
     next()
 });
 
+app.use('/v1/auth/', authRouter);
 app.use('/v1/customer/', productRouter);
 
 app.listen(4000);
