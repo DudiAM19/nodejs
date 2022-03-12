@@ -42,11 +42,48 @@ res:
     }
 }
 
+===========================================================================================
+
 [2] - Login
+
+===========================================================================================
 
 GROUP: Blog
 
 [1] - Create blog post
+[POST] : {root.api}/{version}/blog/post
+
+req:
+{
+    "title": "Title Blog",
+    "image": "Imagefile.png",
+    "body": "lorem Ipsum is Simply dummy text of the printing",
+}
+
+res:
+{
+    "message": "Create Blog Succes",
+    "data": {
+        "post_id": 1,
+        "title": "Title Blog",
+        "image": "Imagefile.png",
+        "body": "lorem Ipsum is Simply dummy text of the printing",
+        "created_at": "10/8/2022",
+        "author": {
+            "uid": 1,
+            "name": "Testing"
+        }
+    }
+}
+
+err-response: 
+201 -> Blog Post Berhasil dibuat
+400 -> Input yang anda masukan salah
+
+===========================================================================================
+
 [2] - Get blog post
 [3] - Update blog post
 [4] - Delete blog post
+
+mongoDB akses = 'UDg4srpn3DRK6ZqS'
