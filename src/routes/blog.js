@@ -10,4 +10,6 @@ router.post('/post', [
     ], 
     blogController.createBlog);
 
+router.get('/posts', blogController.getBlog);
+
 module.exports = router;
